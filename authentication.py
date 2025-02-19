@@ -3,7 +3,6 @@ import bcrypt
 import json
 from users_db import users_db
 
-
 def verify_credentials(username, password):
     """Verifies that user credentials are correct"""
     if username in users_db:
@@ -25,10 +24,7 @@ def login_service():
         password = data.get("password")
 
         success_code = verify_credentials(username, password)
-        if success_code:
-            response = {'status: successfully verified'}
-        else:
-            response = {'status: unable to verify login credentials'}
+        response = {"status": "success" if success_code else "failure"}
         socket.send(json.dumps(response).encode())
 
 
