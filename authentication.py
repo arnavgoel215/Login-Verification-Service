@@ -30,3 +30,8 @@ def login_service():
         else:
             response = {'status: unable to verify login credentials'}
         socket.send(json.dumps(response).encode())
+
+
+if __name__ == '__main__':
+    login_service()
+        
