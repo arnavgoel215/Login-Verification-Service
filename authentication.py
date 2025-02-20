@@ -23,9 +23,10 @@ def login_service():
         username = data.get("username")
         password = data.get("password")
 
-        success_code = verify_credentials(username, password)
-        response = {"status": "success" if success_code else "failure"}
-        socket.send(json.dumps(response).encode())
+        print(f"Now verifying credentials for {username}")
+        success_code = verify_credentials(username, password)  # Verifies username and password and gets the success code
+        response = {"status": "success" if success_code else "failure"}  # Stores response depending on if credentials are successfully verified
+        socket.send(json.dumps(response).encode())  # Sends back response to client
 
 
 if __name__ == '__main__':
