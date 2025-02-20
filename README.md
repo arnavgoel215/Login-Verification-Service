@@ -6,7 +6,8 @@ Login verification microservice to allow verification of user credentials.
 https://www.python.org/downloads/
 
 ### PyZMQ (ZeroMQ for Python)
-https://github.com/zeromq/pyzmq
+https://github.com/zeromq/pyzmq </br>
+</br>
 Install by typing ```pip install pyzmq``` into Terminal or Command Prompt
 
 ### bcrypt
