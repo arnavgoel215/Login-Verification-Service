@@ -11,4 +11,6 @@ https://github.com/zeromq/pyzmq </br>
 Install by typing ```pip install pyzmq``` into Terminal or Command Prompt
 
 ### bcrypt
+https://pypi.org/project/bcrypt/ </br>
+</br>
 Install by typing ```pip install bcrypt``` into Terminal or Command Prompt
