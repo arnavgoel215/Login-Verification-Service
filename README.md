@@ -20,7 +20,22 @@ https://pypi.org/project/bcrypt/ </br>
 Install by typing ```pip install bcrypt``` into Terminal or Command Prompt
 
 ## How to use
-First download the source code files from this respository. Be sure your client program is enabled for communication to the service using ZeroMQ. Be sure the data is sent to the server as a JSON object containing the username and password. There is already a template provided with sample data in users_db.py for how to do this.
+First download the source code files from this respository.
 </br>
 </br>
-When the server receives the username and password it will verify them and send back a response in the form of a JSON object which will either be ```{"status": "success"}``` if the username and password are successfully verified or ```{"status": "failure"}``` if it is unable to verify the username and/or password. The release package also contains a sample client program called client.py to allow you to get an idea of how this should all work.
+The client program should connect using ZeroMQ using the correct port number.
+</br>
+</br>
+Example:
+</br>
+```
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.connect("tcp://localhost:5555")
+```
+</br>
+It should then send the username and password over ZeroMQ as a JSON formatted string.
+</br>
+</br>
+Example:
+</br>
