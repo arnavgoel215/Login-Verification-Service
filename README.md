@@ -46,6 +46,7 @@ request = json.dumps({"username": username, "password": password})
 socket.send(request.encode())
 ```
 </br>
-Once the username and password are verified it will send back a response wich will either be 
+Once the username and password are verified it will send back a response which can be recieved by the client using 
 
+```response = socket.recv()``` and the response itself will either be 
 ```{status: "success"}``` if it is succesfully verified otherwise it will return ```{status: "failure"}```
