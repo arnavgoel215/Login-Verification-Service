@@ -33,9 +33,19 @@ context = zmq.Context()
 socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 ```
+
 </br>
 It should then send the username and password over ZeroMQ as a JSON formatted string.
 </br>
 </br>
 Example:
 </br>
+
+```
+request = json.dumps({"username": username, "password": password})
+socket.send(request.encode())
+```
+</br>
+Once the username and password are verified it will send back a response wich will either be 
+
+```{status: "success"}``` if it is succesfully verified otherwise it will return ```{status: "failure"}```
